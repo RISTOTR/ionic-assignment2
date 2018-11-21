@@ -7,18 +7,29 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <h2 text-center>Enter the right code</h2>
-  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <h2>Enter the right code</h2>
+        <p>Tap twice, press four times</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <p>Tapped: {{ tapped }}</p>
+          </ion-item>
+          <ion-item>
+            <p>Pressed: {{ pressed }}</p>
+          </ion-item>
+        </ion-list>
+     </ion-col>
+    </ion-row>
+    <app-reset></app-reset>
+  </ion-grid>
+  
 
-  <ion-list>
-    <ion-item>
-      <p>Tapped:</p>
-    </ion-item>
-    <ion-item>
-      <p>Pressed:</p>
-    </ion-item>
-  </ion-list>
 
   <app-touch-event></app-touch-event>
 </ion-content>

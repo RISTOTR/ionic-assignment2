@@ -8,8 +8,8 @@ import { OnInit } from '@angular/core';
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit{
-  tapped: number;
-  pressed: number;
+  tapped = 0;
+  pressed = 0;
 
   constructor(public navCtrl: NavController) {
 

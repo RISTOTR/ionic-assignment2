@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { OnInit } from '@angular/core';
+
 
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage implements OnInit{
+export class HomePage {
   tapped = 0;
   pressed = 0;
 
@@ -15,8 +15,33 @@ export class HomePage implements OnInit{
 
   }
 
-  ngOnInit(){
-
+  onDidReset(resetType: string) {
+    switch (resetType) {
+      case 'tap':
+      this.tapped = 0;
+      break;
+      case 'press':
+      this.pressed = 0;
+      break;
+      default:
+      this.tapped = 0;
+      this.pressed = 0;
+    }
   }
+
+  onElementTapped(){
+    console.log("I was tapped");
+    this.tapped++;
+  }
+
+  onElementPressed(){
+    console.log("I was pressed");
+    this.pressed++;
+  }
+
+  didWin(){
+    return this.tapped == 2 && this.pressed == 4;
+  }
+  
 
 }

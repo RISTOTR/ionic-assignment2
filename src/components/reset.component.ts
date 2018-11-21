@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { EventEmitter, Output } from "@angular/core";
 
 @Component({
     selector: 'app-reset',
@@ -34,7 +35,8 @@ import { Component } from "@angular/core";
 })
 
 export class ResetComponent {
+    @Output() didReset = new EventEmitter<string>();
   onReset(type: string) {
-      
+    this.didReset.emit(type);
   }
 }
